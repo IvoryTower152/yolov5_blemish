@@ -441,10 +441,14 @@ def train(hyp, opt, device, callbacks):  # hyp is path/to/hyp.yaml or hyp dictio
 
 def parse_opt(known=False):
     parser = argparse.ArgumentParser()
-    parser.add_argument('--weights', type=str, default='./pretrained/yolov5n640.pt', help='initial weights path')
-    parser.add_argument('--cfg', type=str, default='./models/yolov5n.yaml', help='model.yaml path')
-    parser.add_argument('--data', type=str, default='./data/small.yaml', help='dataset.yaml path')
-    parser.add_argument('--hyp', type=str, default='./data/hyps/hyp.scratch-high.yaml', help='hyperparameters path')
+    parser.add_argument('--weights', type=str,
+                        default='/kaggle/working/yolov5-blemish/pretrained/yolov5n640.pt')
+    parser.add_argument('--cfg', type=str,
+                        default='/kaggle/working/yolov5-blemish/models/yolov5n.yaml')
+    parser.add_argument('--data', type=str,
+                        default='/kaggle/working/yolov5-blemish/data/small.yaml')
+    parser.add_argument('--hyp', type=str,
+                        default='/kaggle/working/yolov5-blemish/data/hyps/hyp.scratch-high.yaml')
     parser.add_argument('--epochs', type=int, default=300, help='total training epochs')
     parser.add_argument('--batch-size', type=int, default=16, help='total batch size for all GPUs, -1 for autobatch')
     parser.add_argument('--imgsz', '--img', '--img-size', type=int, default=640, help='train, val image size (pixels)')
@@ -458,7 +462,7 @@ def parse_opt(known=False):
     parser.add_argument('--bucket', type=str, default='', help='gsutil bucket')
     parser.add_argument('--cache', type=str, nargs='?', const='ram', help='image --cache ram/disk')
     parser.add_argument('--image-weights', action='store_true', help='use weighted image selection for training')
-    parser.add_argument('--device', default='', help='cuda device, i.e. 0 or 0,1,2,3 or cpu')
+    parser.add_argument('--device', default='0', help='cuda device, i.e. 0 or 0,1,2,3 or cpu')
     parser.add_argument('--multi-scale', action='store_true', help='vary img-size +/- 50%%')
     parser.add_argument('--single-cls', action='store_true', help='train multi-class data as single-class')
     parser.add_argument('--optimizer', type=str, choices=['SGD', 'Adam', 'AdamW'], default='SGD', help='optimizer')
