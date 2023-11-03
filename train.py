@@ -449,7 +449,7 @@ def parse_opt(known=False):
                         default='/kaggle/working/yolov5-blemish/data/small.yaml')
     parser.add_argument('--hyp', type=str,
                         default='/kaggle/working/yolov5-blemish/data/hyps/hyp.scratch-high.yaml')
-    parser.add_argument('--epochs', type=int, default=300, help='total training epochs')
+    parser.add_argument('--epochs', type=int, default=200, help='total training epochs')
     parser.add_argument('--batch-size', type=int, default=16, help='total batch size for all GPUs, -1 for autobatch')
     parser.add_argument('--imgsz', '--img', '--img-size', type=int, default=640, help='train, val image size (pixels)')
     parser.add_argument('--rect', action='store_true', help='rectangular training')
