@@ -442,18 +442,18 @@ def train(hyp, opt, device, callbacks):  # hyp is path/to/hyp.yaml or hyp dictio
 def parse_opt(known=False):
     parser = argparse.ArgumentParser()
     parser.add_argument('--weights', type=str,
-                        default='/kaggle/working/yolov5-blemish/pretrained/yolov5n640.pt')
+                        default='')
     parser.add_argument('--cfg', type=str,
-                        default='/kaggle/working/yolov5-blemish/models/yolov5n.yaml')
+                        default='/kaggle/working/yolov5-blemish/models/repCase1.yaml')
     parser.add_argument('--data', type=str,
                         default='/kaggle/working/yolov5-blemish/data/small.yaml')
     parser.add_argument('--hyp', type=str,
                         default='/kaggle/working/yolov5-blemish/data/hyps/hyp.scratch-high.yaml')
-    parser.add_argument('--epochs', type=int, default=200, help='total training epochs')
+    parser.add_argument('--epochs', type=int, default=300, help='total training epochs')
     parser.add_argument('--batch-size', type=int, default=16, help='total batch size for all GPUs, -1 for autobatch')
-    parser.add_argument('--imgsz', '--img', '--img-size', type=int, default=640, help='train, val image size (pixels)')
+    parser.add_argument('--imgsz', '--img', '--img-size', type=int, default=1280, help='train, val image size (pixels)')
     parser.add_argument('--rect', action='store_true', help='rectangular training')
-    parser.add_argument('--resume', nargs='?', const=True, default=False, help='resume most recent training')
+    parser.add_argument('--resume', nargs='?', const=True, default=True, help='resume most recent training')
     parser.add_argument('--nosave', action='store_true', help='only save final checkpoint')
     parser.add_argument('--noval', action='store_true', help='only validate final epoch')
     parser.add_argument('--noautoanchor', action='store_true', help='disable AutoAnchor')
@@ -469,7 +469,7 @@ def parse_opt(known=False):
     parser.add_argument('--sync-bn', action='store_true', help='use SyncBatchNorm, only available in DDP mode')
     parser.add_argument('--workers', type=int, default=8, help='max dataloader workers (per RANK in DDP mode)')
     parser.add_argument('--project', default='/kaggle/working/train', help='save to project/name')
-    parser.add_argument('--name', default='small_coco_pretrain', help='save to project/name')
+    parser.add_argument('--name', default='isaid_pretrain', help='save to project/name')
     parser.add_argument('--exist-ok', action='store_true', help='existing project/name ok, do not increment')
     parser.add_argument('--quad', action='store_true', help='quad dataloader')
     parser.add_argument('--cos-lr', action='store_true', help='cosine LR scheduler')
