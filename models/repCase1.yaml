@@ -1,6 +1,6 @@
 # RepVGG + SE + w/o SPPF
 
-nc: 1  # number of classes
+nc: 15  # number of classes
 depth_multiple: 0.33  # model depth multiple
 width_multiple: 0.25  # layer channel multiple
 anchors:

@@ -3,8 +3,18 @@ train: images/train
 val: images/val
 
 names:
-  0: light
-  1: bird
-  2: ball
-  3: kite
-  4: phone
+  0: Small_Vehicle
+  1: Large_Vehicle
+  2: plane
+  3: ship
+  4: Swimming_pool
+  5: Harbor
+  6: tennis_court
+  7: Swimming_pool
+  8: Ground_Track_Field
+  9: Soccer_ball_field
+  10: baseball_diamond
+  11: Bridge
+  12: basketball_court
+  13: Roundabout
+  14: Helicopter
