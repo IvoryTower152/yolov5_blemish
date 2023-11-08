@@ -1,4 +1,4 @@
-path: /kaggle/input/smallcoco
+path: /kaggle/input/isaidpart1
 train: images/train
 val: images/val
 
