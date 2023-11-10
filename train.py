@@ -442,7 +442,7 @@ def train(hyp, opt, device, callbacks):  # hyp is path/to/hyp.yaml or hyp dictio
 def parse_opt(known=False):
     parser = argparse.ArgumentParser()
     parser.add_argument('--weights', type=str,
-                        default='')
+                        default='/kaggle/working/yolov5-blemish/date1108_last.pt')
     parser.add_argument('--cfg', type=str,
                         default='/kaggle/working/yolov5-blemish/models/repCase1.yaml')
     parser.add_argument('--data', type=str,
