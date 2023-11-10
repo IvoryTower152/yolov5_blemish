@@ -498,14 +498,15 @@ def main(opt, callbacks=Callbacks()):
 
     # Resume (from specified or most recent last.pt)
     if opt.resume and not check_comet_resume(opt) and not opt.evolve:
-        last = Path(check_file(opt.resume) if isinstance(opt.resume, str) else get_latest_run())
-        opt_yaml = last.parent.parent / 'opt.yaml'  # train options yaml
+        # last = Path(check_file(opt.resume) if isinstance(opt.resume, str) else get_latest_run())
+        last = opt.weights
+        # opt_yaml = last.parent.parent / 'opt.yaml'  # train options yaml
         opt_data = opt.data  # original dataset
-        if opt_yaml.is_file():
-            with open(opt_yaml, errors='ignore') as f:
-                d = yaml.safe_load(f)
-        else:
-            d = torch.load(last, map_location='cpu')['opt']
+        # if opt_yaml.is_file():
+        #     with open(opt_yaml, errors='ignore') as f:
+        #         d = yaml.safe_load(f)
+        # else:
+        d = torch.load(last, map_location='cpu')['opt']
         opt = argparse.Namespace(**d)  # replace
         opt.cfg, opt.weights, opt.resume = '', str(last), True  # reinstate
         if is_url(opt_data):
